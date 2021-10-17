@@ -63,15 +63,28 @@ body input[name=dot] {
 .text {
     margin: 0;
     color: floralwhite;
-    width: 400%;
-    height: 50px;
+    width: 100%;
+    height: 1.4em;
     overflow: hidden;
+    display: flex;
+}
+
+@keyframes quote-text {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .quote {
-    width: 800px;
-    display: inline-block;
-    width: 600px;
+    animation: quote-text .8s ;
+    display: none;
+    width: 400%;
+    transition: all 0.5s ease;
 }
 
 .dots {
@@ -86,9 +99,9 @@ body input[name=dot] {
 .bar {
     display: block;
     margin: auto 0;
-    width: 20px;
-    height: 20px;
-    margin-left: 20px;
+    width: 0.5em;
+    height: 0.5em;
+    margin-left: 0.5em;
     border: 3px solid rgb(33, 130, 241);
     background: transparent;
     border-radius: 50%;
@@ -119,6 +132,22 @@ body input[name=dot] {
     transform: translateX(-300%);
 }
 
+/* //text-animation */
+#sl1:checked ~ .main .text .quote:nth-child(1) {
+    display: inline;
+}
+
+#sl2:checked ~ .main .text .quote:nth-child(2) {
+    display: inline;
+}
+
+#sl3:checked ~ .main .text .quote:nth-child(3) {
+    display: inline;
+}
+
+#sl4:checked ~ .main .text .quote:nth-child(4) {
+    display: inline;
+}
 
 #sl1:checked ~ .main .dots label[for=sl1],
 #sl2:checked ~ .main .dots label[for=sl2],
